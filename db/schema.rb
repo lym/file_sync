@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_10_011219) do
+ActiveRecord::Schema.define(version: 2019_05_14_220925) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,16 +39,7 @@ ActiveRecord::Schema.define(version: 2019_05_10_011219) do
   create_table "file_transfers", force: :cascade do |t|
     t.string "direction"
     t.string "file_name"
-    t.bigint "iana_media_type_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["iana_media_type_id"], name: "index_file_transfers_on_iana_media_type_id"
-  end
-
-  create_table "iana_media_types", force: :cascade do |t|
-    t.string "type"
-    t.string "subtype"
-    t.string "parameter"
+    t.string "iana_media_type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -62,5 +53,4 @@ ActiveRecord::Schema.define(version: 2019_05_10_011219) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "file_transfers", "iana_media_types"
 end

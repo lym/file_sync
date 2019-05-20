@@ -3,9 +3,9 @@
 one:
   direction: MyString
   file_name: MyString
-  iana_media_type: one
+  iana_media_type: MyString
 
 two:
   direction: MyString
   file_name: MyString
-  iana_media_type: two
+  iana_media_type: MyString
