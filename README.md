@@ -1,25 +1,24 @@
 # File Sync
 FileSync is a file synchronization application.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Dependencies
+- Imagemagick
+- FFmpeg
+- Ruby 2.5
+- Poppler
+- Webpacker
+- Yarn
 
-Things you may want to cover:
+## How to run the application
+* bundle install
 
-* Ruby version
+* Create test and development databases (Application is tested with
+  PostgreSQL)
 
-* System dependencies
+* rails db:migrate
 
-* Configuration
 
-* Database creation
+## Features
+* File Upload
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* File Download
