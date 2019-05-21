@@ -1,0 +1,20 @@
+%div{class: "row"}
+  - if @file_list.empty?
+    %h1 Oops It appears you haven't uploaded anything yet!
+    /%a{class: "btn btn-primary", href: "#"} Upload
+    = link_to 'Upload', new_file_transfer_path, class: "btn btn-primary"
+  - else
+    - @file_list.each do |file|
+      %div{class: "card m-5", style: "width: 22rem;"}
+        %div{class: "view overlay"}
+          = image_tag(file.representation(resize: '352x235'),
+            class: 'img-fluid', alt: "#{file.filename.base}")
+          %a{href: "#"}
+          %div{class: "mask rgba-white-slight"}
+
+        %div{class: "card-body"}
+          %h4{class: "card-title"}
+            = file.filename.base
+          %p{class: "card-text"}
+          =link_to('Download', rails_blob_path(file, disposition: 'attachment'),
+            class: "btn btn-primary")

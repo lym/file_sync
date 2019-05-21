@@ -11,6 +11,7 @@ require("jquery")
 require("popper.js")
 require("bootstrap")
 require("mdb")
+require("../direct_uploads")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

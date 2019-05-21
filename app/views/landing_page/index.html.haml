@@ -1,31 +1,3 @@
-%header
-  / Navbar
-  %nav{:class => "navbar navbar-expand-lg navbar-dark primary-color"}
-    / Navbar brand
-    %a{:class => "navbar-brand", :href => "#"} FileSync
-    / Collapse button
-    %button{class: "navbar-toggler",
-      aria: {controls: "basicExampleNav", expanded: "false", label: "Toggle navigation"},
-      data: {target: "#basicExampleNav", toggle: "collapse"}, type: "button"}
-      %span{class: "navbar-toggler-icon"}
-
-    / Collapsible content
-    %div{class: "collapse navbar-collapse", id: "basicExampleNav"}
-      %ul{class: "navbar-nav ml-auto nav-flex-icons"}
-        %li{class: "nav-item avatar dropdown"}
-          %a{class: "nav-link dropdown-toggle", id: "navbarDropdownMenuLink-55",
-            data: {toggle: "dropdown"},
-            aria: {haspopup: "true", expanded: "false"}}
-            =image_tag 'Madrid-dark-logo.png', class: "rounded-circle z-depth-0",
-              alt: "avatar image", size: '35x35'
-          %div{class: "dropdown-menu dropdown-menu-right dropdown-secondary",
-            aria: {labelledby: "navbarDropdownMenuLink-55"}}
-            %a{class: "dropdown-item", href: "#"}Profile
-            %a{class: "dropdown-item", href: "#"}Settings
-            %a{class: "dropdown-item", href: "#"}Logout
-    / Collapsible content
-  / /.Navbar
-
 %main{class: "mt-5"}
   .container
     / Grid row
@@ -42,10 +14,8 @@
           * Ease of access. No matter how and where you created your data
           you can always access it from any device that have an Internet access
           by leveraging the power of the cloud
-        %a{href: "#", class: "btn btn-primary"}
-          Download
-        %a{href: "#", class: "btn btn-primary"}
-          Upload
+        =link_to 'Download', file_transfers_path, class: "btn btn-primary"
+        =link_to 'Upload', new_file_transfer_path, class: "btn btn-primary"
 
       .col-md-7
         %div{class: "view overlay z-depth-1-half"}
