@@ -1,7 +1,6 @@
 %div{class: "row"}
   - if @file_list.empty?
     %h1 Oops It appears you haven't uploaded anything yet!
-    /%a{class: "btn btn-primary", href: "#"} Upload
     = link_to 'Upload', new_file_transfer_path, class: "btn btn-primary"
   - else
     - @file_list.each do |file|
